@@ -1,112 +1,154 @@
-.splash {
-  // align-items: center;
-  // background-position: center;
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // position: fixed;
-  // height: 100vh;
-  // justify-content: center;
-  // top: 0;
-  // left: 0;
-  // bottom: 0;
-  // right: 0;
-  background-color: $color-black;
-  display: flex;
-  min-height: 100vh;
+.intro {
+  background-color: #FBFBFB;
+  position: relative;
+  height: 100vh; /* Fallback */
+  height: calc(var(--vh, 1vh) * 100);
 
-  &-left {
-    display: flex;
-    flex-direction: column;
-    flex: 0.5;
-    padding: 25px;
-    width: 50%;
-  }
+  &-background {
+    height: 100%;
+    transform-origin: center;
+    transition: transform 0.7s ease;
 
-  &-right {
-    align-items: center;
-    display: flex;
-    width: 50%;
-    flex: 0.5;
-  }
+    &:after {
+      background-color: #000;
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      transform: scale(0);
+      width: 100%;
+    }
 
-  &-media {
-    // height: 80vh;
-    width: 90%;
-  }
+    &.is-animating {
+      transform: scaleY(0.001);
+    }
 
-  &-video {
-    width: 100%;
-  }
-
-
-  &-title {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5vw;
-    color: $color-white;
-    text-transform: uppercase;
-  }
-
-  &-nav {
-    display: flex;
-    flex: 1;
-    padding-top: 33%;
-  }
-
-  &-navList {
-    color: $color-white;
-
-    &Item {
-      padding-bottom: 20px;
+    &.has-finished-animating {
+      display: none;
     }
   }
 
-  &-section {
-    color: $color-white;
+  &-title {
+    color: #f2f2f2;
+    font-size: 3vw;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-line {
+    background-color: #000;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+    width: 100%;
+
+    &.is-active {
+      opacity: 1;
+      transform: translateY(-50%) scaleX(1);
+    }
+  }
+
+  &-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    // z-index: -2;
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-secondBackground {
+    background-color: #FBFBFB;
+    position: absolute;
+    height: 50%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(1);
+    transform-origin: top center;
+    width: 100%;
+    // z-index: -1;
+
+    &.second-stage {
+      animation-name: reveal;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-thirdBackground {
+    background-color: #FBFBFB;
+    bottom: 0;
+    position: absolute;
+    height: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(1);
+    transform-origin: bottom center;
+    width: 100%;
+    // z-index: -1;
+
+    &.second-stage {
+      animation-name: reveal;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 
-// &-title {
-//   display: flex;
-//   color: white;
-//   font-size: 40px;
-//   font-family: 'sans-serif';
-//   text-transform: uppercase;
-// }
-
-// &-letter {
-//   animation-name: delayed-entrance;
-//   animation-duration: 0.3s;
-//   animation-fill-mode: forwards;
-//   opacity: 0;
-
-//   $var: 21;
-//   $delay: 0.3;
-
-//   @for $i from 1 through $var {
-//     $delay: $delay + 0.7;
-//     &:nth-child(#{$i}) {
-//       animation-delay: $delay + s;
-//     }
-//   }
-// }
-
-
-@keyframes delayed-entrance {
+@keyframes reveal {
   0% {
-    opacity: 0;
-    transform: scale(0.9);
+    transform: scaleY(1);
   }
 
-  70% {
-    opacity: 0.5;
+  19% {
+    transform: scaleY(1);
+  }
+
+  20% {
+    transform: scaleY(0.7);
+  }
+
+  59% {
+    transform: scaleY(0.7);
+  }
+
+  60% {
+    transform: scaleY(0.5);
+  }
+
+  89% {
+    transform: scaleY(0.5);
   }
 
   90% {
-    opacity: 0.9;
-    transform: scale(1);
+    transform: scaleY(0.3);
   }
 
   100% {
-    opacity: 1;
+    transform: scaleY(0);
   }
 }
