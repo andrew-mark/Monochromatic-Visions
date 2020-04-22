@@ -31,6 +31,7 @@ const Splash = (props) => {
 
   return (
     <div className="intro">
+      
       <div className={`intro-background
         ${startAnimation ? 'is-animating' : ''}
         ${endAnimation ? 'has-finished-animating' : ''}
@@ -41,6 +42,13 @@ const Splash = (props) => {
       </div>
       <div className={`intro-line ${endAnimation ? 'is-active' : ''}`}></div>
       <div className={`intro-video ${secondStage ? 'is-active' : ''}`}>
+        <div className="intro-topbar">
+          <h1>Monochromatic Visions</h1>
+          <div className="">
+            Track number one playing
+          </div>
+          <div>Menu</div>
+        </div>
         <img src={require('../../assets/images/Pulsing clip.gif')} alt="lights" />
       </div>
       <div className={`intro-secondBackground ${secondStage ? 'second-stage' : ''}`}>
