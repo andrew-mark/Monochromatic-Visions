@@ -37,7 +37,7 @@ const Splash = (props) => {
         ${endAnimation ? 'has-finished-animating' : ''}
         `}>
         <div className="intro-title">
-          Monochromatic Visions
+          Monochromatic<br/>Visions
         </div>
       </div>
       <div className={`intro-line ${endAnimation ? 'is-active' : ''}`}></div>
