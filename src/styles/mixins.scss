@@ -1,0 +1,187 @@
+@mixin respond-to($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+  } @else {
+    @media (min-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-to-max($name) {
+  @if not map-has-key($breakpoints-max, $name) {
+    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+  } @else {
+    @media (max-width: map-get($breakpoints-max, $name)) {
+      @content;
+    }
+  }
+}
+
+@mixin grid-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $grid-max-content-width;
+  padding-left: $grid-wrapper-padding-mobile;
+  padding-right: $grid-wrapper-padding-mobile;
+  width: 100%;
+
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  @include respond-to(small) {
+    padding-left: $grid-wrapper-padding-default;
+    padding-right: $grid-wrapper-padding-default;
+  }
+}
+
+@mixin grid-container {
+  $_margin: $grid-gutters-mobile / -2;
+
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: row wrap;
+  margin-left: $_margin;
+  margin-right: $_margin;
+  min-width: 100%;
+  position: relative;
+
+  @include respond-to(small) {
+    $_margin: $grid-gutters / -2;
+
+    margin-left: $_margin;
+    margin-right: $_margin;
+  }
+}
+
+@mixin grid-cell($_columns: 0, $_total-columns: $grid-columns) {
+  $_padding: $grid-gutters-mobile / 2;
+
+  flex: 0 0 auto;
+  padding-left: $_padding;
+  padding-right: $_padding;
+  position: relative;
+
+  @include respond-to(small) {
+    $_padding: $grid-gutters / 2;
+
+    padding-left: $_padding;
+    padding-right: $_padding;
+  }
+
+  @if $_columns > 0 {
+    @include grid-cell-size($_columns, $_total-columns);
+  }
+}
+
+@mixin grid-cell-absolute($_columns: 0, $_total-columns: $grid-columns) {
+  $_padding: $grid-gutters / 2;
+
+  flex: 0 0 auto;
+  padding-left: $_padding;
+  padding-right: $_padding;
+  position: absolute;
+
+  @if $_columns > 0 {
+    @include grid-cell-size($_columns, $_total-columns);
+  }
+}
+
+@function grid-pre($_columns: 1, $_total-columns: $grid-columns) {
+  @return $_columns / $_total-columns * 100%;
+}
+
+@mixin grid-pre($_columns: 1, $_total-columns: $grid-columns) {
+  margin-left: grid-pre($_columns, $_total-columns);
+}
+
+@function grid-post($_columns: 1, $_total-columns: $grid-columns) {
+  @return $_columns / $grid-columns * 100%;
+}
+
+@mixin grid-post($_columns: 1, $_total-columns: $grid-columns) {
+  margin-right: grid-post($_columns, $_total-columns);
+}
+
+@mixin grid-cell-size($_columns: 1, $_total-columns: $grid-columns) {
+  $_width: grid-cell-size($_columns, $_total-columns);
+
+  max-width: $_width;
+  width: $_width;
+}
+
+@function grid-cell-size($_columns: 1, $_total-columns: $grid-columns) {
+  @return $_columns / $_total-columns * 100%;
+}
+
+@mixin size-grid-cell($_columns: 1, $_total-columns: $grid-columns) {
+  $_width: grid-cell-size($_columns, $_total-columns);
+
+  max-width: $_width;
+  width: $_width;
+}
+
+@mixin image-aspect-lock($_width: 400, $_height: 300, $_fit: cover) {
+  $_padding: $_height / $_width * 100%;
+
+  display: block;
+  height: auto;
+  overflow: hidden;
+  padding: $_padding 0 0 0;
+  position: relative;
+  width: 100%;
+
+  img {
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    max-width: 100%;
+    object-fit: $_fit;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+@mixin svg-scaling-icon($_padding_bottom: 92%) {
+  .d-Icon {
+    padding-bottom: $_padding_bottom;
+    position: relative;
+    width: 100%;
+
+    .d-Symbol {
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+@function get-z($layer) {
+  @return index($z-layers, $layer);
+}
+
+// Custom mixins for styles
+
+@mixin form-container {
+  width: 100%;
+  max-width: $form-max-width;
+}
+
+@mixin form-group {
+  width: 100%;
+}
+
+@mixin component-padding {
+  padding-top: $component-padding-top-mobile;
+  padding-bottom: $component-padding-bottom-mobile;
+
+  @include respond-to(small) {
+    padding-top: $component-padding-top-desktop;
+    padding-bottom: $component-padding-bottom-desktop;
+  }
+}

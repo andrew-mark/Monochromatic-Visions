@@ -1,0 +1,131 @@
+// Colors
+// $color-red-hover: #ff5050;
+// $color-purple-light: rgba(50, 19, 55, 0.5);
+// $color-purple-grey: #a193a8;
+// $color-purple-transparent: rgba($color-purple, 0.05);
+// $color-purple-faded: rgba(#2a0034, 0.4);
+$color-black: #000;
+$color-white: #fff;
+// $color-white-bg: #f9f9f4;
+// $color-white-beige: #fbfaf9;
+// $color-white-mid: #f2efec;
+// $color-light-grey: #cdcdcd;
+// $color-mid-grey: #949494;
+$color-valid: #44b36f;
+$color-invalid: #e02020;
+$color-invalid-bg: rgba(#e02020, 0.2);
+$color-yellow: #ffdf53;
+
+$color-warning-red: #E1321E;
+$color-warning-red-20: #F8D5D1;
+$color-success-green: #50B45A;
+$color-success-green-20: #DBEFDD;
+$color-attention-yellow: #FFE150;
+$color-attention-yellow-20: #FFF8DB;
+$color-information-blue: #509BD7;
+$color-information-blue-20: #DBEAF6;
+
+$color-purple: #2a0034;
+$color-purple-80: #55335d;
+$color-purple-60: #7f6685;
+$color-purple-40: #aa99ae;
+
+$color-red: #f9423a;
+$color-red-80: #fa6861;
+$color-red-60: #fb8e89;
+$color-red-40: #fdb3b0;
+
+$color-beige: #f2efec;
+$color-beige-80: #f5f2f0;
+$color-beige-60: #f7f5f4;
+$color-beige-40: #faf9f7;
+
+$color-grey: #656565;
+$color-grey-60: #a2a2a2;
+$color-grey-40: #d1d1d1;
+
+// Grid
+$grid-max-content-width: 1160px;
+$grid-wrapper-padding-default: 32px;
+$grid-wrapper-padding-mobile: 16px;
+$grid-gutters: 32px;
+$grid-gutters-mobile: 16px;
+$grid-columns: 12;
+
+// Breakpoints
+$breakpoints: (
+  tiny: 480px,
+  tiny_small: 580px,
+  small: 768px,
+  medium_small: 860px,
+  medium: 1024px,
+  medium_large: 1280px,
+  large: 1440px,
+  extra_large: 1600px,
+);
+
+$contentArea-padding-default: 80px;
+$contentArea-padding-small: 64px;
+
+$content-padding-default: 100px;
+$content-padding-mobile: 100px;
+
+$form-max-width: 460px;
+
+$breakpoints-max: (
+  tiny: map-get($breakpoints, 'tiny') - 1,
+  tiny_small: map-get($breakpoints, 'tiny_small') - 1,
+  small: map-get($breakpoints, 'small') - 1,
+  medium_small: map-get($breakpoints, 'medium_small') - 1,
+  medium: map-get($breakpoints, 'medium') - 1,
+  medium_large: map-get($breakpoints, 'medium_large') - 1,
+  large: map-get($breakpoints, 'large') - 1,
+);
+
+// Z-index layers
+$z-layers: (
+  'navigation',
+  'portfolio-lower-container',
+  'dashboard-header',
+  'modal',
+  'tooltip',
+  'captcha',
+  'header',
+  'mobile-navigation',
+  'grid-overlay',
+  'temp-grid'
+);
+
+// Commonly used design pieces
+// $border-standard: 2px solid $color-purple-transparent;
+$padding-inner-mobile: 16px;
+$padding-inner-desktop: 40px;
+$box-shadow-default: 0px 2px 20px -10px rgba($color-black, 0.5);
+
+$spacing-system-8: 8px;
+$spacing-system-16: 16px;
+$spacing-system-24: 24px;
+$spacing-system-32: 32px;
+$spacing-system-40: 40px;
+$spacing-system-48: 48px;
+$spacing-system-56: 56px;
+$spacing-system-64: 64px;
+$spacing-system-72: 72px;
+$spacing-system-80: 80px;
+
+$utils-spacing-small: 60px;
+$utils-spacing-medium: 100px;
+$utils-spacing-large: 140px;
+
+$component-padding-top-desktop: 120px;
+$component-padding-bottom-desktop: 160px;
+
+$component-padding-top-mobile: 64px;
+$component-padding-bottom-mobile: 80px;
+
+$shadow-none: 0;
+$shadow-flat: 0 0 4px -2px rgba(0, 0, 0, 0.04), 0 0 11px -2px rgba(0, 0, 0, 0.1);
+$shadow-stacked: 0 0 30px 4px rgba(0, 0, 0, 0.07), 0 0 4px -2px rgba(0, 0, 0, 0.04), 0 0 11px -2px rgba(0, 0, 0, 0.1);
+$shadow-sticky: 0 0 36px 4px rgba(0, 0, 0, 0.07), 0 0 11px -2px rgba(0, 0, 0, 0.04), 0 0 14px -2px rgba(0, 0, 0, 0.1);
+$shadow-hover: 0 0 38px 4px rgba(0, 0, 0, 0.07), 0 0 17px -2px rgba(0, 0, 0, 0.04), 0 0 15px 0 rgba(0, 0, 0, 0.1);
+$shadow-pop-up: 0 0 40px 8px rgba(0, 0, 0, 0.07), 0 0 30px -2px rgba(0, 0, 0, 0.04), 0 0 20px 0 rgba(0, 0, 0, 0.1);

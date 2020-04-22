@@ -47,7 +47,7 @@ class StoryblokEntry extends React.Component {
 
   loadStory(payload) {
     window.storyblok.get({
-      slug: getParam('path'), 
+      slug: getParam('path'),
       version: 'draft',
       resolve_relations: sbConfig.options.resolveRelations || []
     }, (data) => {
@@ -59,7 +59,7 @@ class StoryblokEntry extends React.Component {
   loadGlovalNavi(lang) {
     const language = lang === 'default' ? '' : lang + '/'
     window.storyblok.get({
-      slug: `${language}global-navi`, 
+      slug: `${language}global-navi`,
       version: 'draft'
     }, (data) => {
       this.setState({globalNavi: data.story})
