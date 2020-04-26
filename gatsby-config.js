@@ -44,14 +44,14 @@ module.exports = {
         resources: ['./src/styles/resources.scss'],
       },
     },
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /assets/
-        }
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-react-svg',
+    //   options: {
+    //     rule: {
+    //       include: /assets/
+    //     }
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
