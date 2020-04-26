@@ -1,0 +1,236 @@
+.intro {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh; /* Fallback */
+  height: calc(var(--vh, 1vh) * 100);
+
+  &-background {
+    height: 100%;
+    transform-origin: center;
+    transition: transform 0.7s ease;
+
+    &:after {
+      background-color: #000;
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      transform: scale(0);
+      width: 100%;
+    }
+
+    &.is-animating {
+      transform: scaleY(0.001);
+    }
+
+    &.has-finished-animating {
+      display: none;
+    }
+  }
+
+  &-title {
+    // animation-name: rotateInitials;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    color: #E1E1E1;
+    font-size: 1rem;
+    text-transform: uppercase;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    transform-origin: center;
+    font-family: neue-haas-unica, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+
+    // &:before {
+    //   background-color: #fff;
+    //   display: block;
+    //   content: '';
+    //   height: 1px;
+    //   width: 20px;
+    // }
+  }
+
+  &-words {
+    font-size: 3rem;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-initials {
+    transform-origin: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 3rem;
+  }
+
+  &-initial {
+    display: inline-block;
+
+    &Wrapper {
+      display: inline-block;
+      position: absolute;
+      opacity: 0;
+    }
+  }
+
+  .triangle{
+    fill: transparent;
+    stroke: white;
+    stroke-width: 8;
+
+    &Container {
+      width: 55px;
+    }
+  }
+
+  &-triangle {
+    display: flex;
+    opacity: 0;
+  }
+
+  &-line {
+    background-color: #000;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+    width: 100%;
+
+    &.is-active {
+      opacity: 1;
+      transform: translateY(-50%) scaleX(1);
+    }
+  }
+
+  &-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    // visibility: hidden;
+    // z-index: -2;
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-secondBackground {
+    background-color: #FBFBFB;
+    position: absolute;
+    height: 50%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(1);
+    transform-origin: top center;
+    width: 100%;
+    // z-index: -1;
+
+    &.second-stage {
+      animation-name: reveal;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-thirdBackground {
+    background-color: #FBFBFB;
+    bottom: 0;
+    position: absolute;
+    height: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(1);
+    transform-origin: bottom center;
+    width: 100%;
+    // z-index: -1;
+
+    &.second-stage {
+      animation-name: reveal;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-topbar {
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    padding: 0 40px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-family: neue-haas-unica, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+
+    h1 {
+      font-family: neue-haas-unica, sans-serif;
+      font-weight: 200;
+      font-style: normal;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@keyframes rotateInitials {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes rotateInitial {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}

@@ -1,157 +1,149 @@
 .intro {
-  background-color: #FBFBFB;
+  background-color: #000;
+  display: flex;
   position: relative;
   height: 100vh; /* Fallback */
   height: calc(var(--vh, 1vh) * 100);
 
-  &-background {
-    height: 100%;
-    transform-origin: center;
-    transition: transform 0.7s ease;
-
-    &:after {
-      background-color: #000;
-      content: '';
-      display: block;
-      height: 1px;
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      transform: scale(0);
-      width: 100%;
-    }
-
-    &.is-animating {
-      transform: scaleY(0.001);
-    }
-
-    &.has-finished-animating {
-      display: none;
-    }
-  }
-
   &-title {
-    color: #E1E1E1;
-    font-size: 6vw;
-    text-transform: uppercase;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
+    font-size: 5vw;
     font-family: neue-haas-unica, sans-serif;
     font-weight: 200;
     font-style: normal;
+    line-height: 1.3;
+    padding-top: 1vw;
+    padding-left: 1vw;
+    position: absolute;
+    text-transform: uppercase;
+    // z-index: 1;
+
+    &.is-open {
+      transform: translateX(0);
+    }
   }
 
-  &-line {
-    background-color: #000;
-    height: 1px;
-    position: absolute;
-    opacity: 0;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%) scaleX(0);
-    transition: transform 0.3s ease;
-    width: 100%;
-
-    &.is-active {
-      opacity: 1;
-      transform: translateY(-50%) scaleX(1);
-    }
+  &-clickToPlay {
+    position: fixed;
+    bottom: 1vw;
+    left: 1vw;
+    text-transform: uppercase;
   }
 
   &-video {
+    display: flex;
     position: fixed;
     top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+   img {
+     object-fit: cover;
+   }
+  }
+
+  &-menu {
+    position: fixed;
+    top: 1vw;
+    right: 1vw;
+  }
+
+  &-list {
+    display: flex;
+
+    &Item {
+      font-size: 2vw;
+      // margin: 0 20px;
+      position: relative;
+      // text-transform: uppercase;
+
+      button {
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 2vw;
+        font-family: neue-haas-unica, sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        margin: 0 20px;
+        padding: 0;
+        position: relative;
+        // text-transform: uppercase;
+
+        &:after {
+          background-color: #fff;
+          bottom: -1px;
+          content: '';
+          display: block;
+          height: 1px;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.15s ease;
+          position: absolute;
+          width: 100%;
+        }
+
+        &:hover {
+          &:after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+
+  &-slideInMenu {
+    background-color:#D5D5D5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: fixed;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    opacity: 0;
-    visibility: hidden;
-    // z-index: -2;
-    &.is-active {
-      opacity: 1;
-      visibility: visible;
+    transform: translateX(-100%);
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+
+    &.is-open {
+      transform: translateX(0);
+    }
+
+    &Close {
+      appearance: none;
+      background-color: transparent;
+      border: none;
+      color: #000;
+      cursor: pointer;
+      font-size: 1rem;
+      position: absolute;
+      top: 1vw;
+      left: 20px;
+      padding: 0;
     }
   }
 
-  &-secondBackground {
-    background-color: #FBFBFB;
-    position: absolute;
-    height: 50%;
-    top: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: scaleY(1);
-    transform-origin: top center;
-    width: 100%;
-    // z-index: -1;
-
-    &.second-stage {
-      animation-name: reveal;
-      animation-duration: 1s;
-      animation-timing-function: ease;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  &-thirdBackground {
-    background-color: #FBFBFB;
-    bottom: 0;
-    position: absolute;
-    height: 50%;
-    opacity: 0;
-    visibility: hidden;
-    transform: scaleY(1);
-    transform-origin: bottom center;
-    width: 100%;
-    // z-index: -1;
-
-    &.second-stage {
-      animation-name: reveal;
-      animation-duration: 1s;
-      animation-timing-function: ease;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  &-topbar {
-    align-items: center;
-    background-color: #000;
-    color: #fff;
+  &-content {
+    background-color: rgba(#fff, 0.6);
+    height: 100%;
+    width: 33%;
+    color: #000;
     display: flex;
-    justify-content: space-between;
-    position: absolute;
-    padding: 0 40px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    font-family: neue-haas-unica, sans-serif;
-    font-weight: 100;
-    font-style: normal;
+    font-size: 1rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    line-height: 1.5;
+    padding: 20px 20px 3vw;
+    align-items: flex-end;
+    position: relative;
+    opacity: 0;
+    mix-blend-mode: luminosity;
 
-    h1 {
-      font-family: neue-haas-unica, sans-serif;
-      font-weight: 200;
-      font-style: normal;
-      text-transform: uppercase;
+    &.is-open {
+      
     }
-  }
-}
-
-@keyframes reveal {
-  0% {
-    transform: scaleY(1);
-  }
-
-  100% {
-    transform: scaleY(0);
   }
 }
