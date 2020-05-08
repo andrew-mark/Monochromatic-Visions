@@ -85,16 +85,6 @@ const Splash = (props) => {
           <div className="intro-black-overlay clip-path"></div>
           <div></div>
       </motion.div>
-      <div className="intro-title">
-        <h1>
-          <div className="intro-title-one">
-            <span>Mono</span><span>chromatic</span>
-          </div>
-          <div className="intro-title-second">
-            Visions
-          </div>
-        </h1>
-      </div>
       <nav className="intro-menu">
         <ul className="intro-list">
           <li className="intro-listItem"><button onClick={() => openMenu(1, true)}>Gigs</button></li>
