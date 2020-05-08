@@ -1,0 +1,98 @@
+.overlay {
+  bottom: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+
+  &-container {
+    height: 100vh; /* Fallback */
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  &-right {
+    @include grid-pre(8);
+    @include grid-cell(4);
+
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+
+    &:after {
+      background-color: $color-white;
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+  }
+
+  &-menu {
+    align-items: flex-end;
+    color: $color-black;
+    display: flex;
+    justify-content: center;
+    flex: 0.5;
+    flex-direction: column;
+
+    &Item {
+      cursor: pointer;
+      overflow: hidden;
+      margin: 10px 0;
+      padding-bottom: 1px;
+      position: relative;
+      text-align: right;
+      text-transform: uppercase;
+
+      &Button {
+        @include typography('menu');
+
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        color: $color-black;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+
+        &.is-active {
+          font-weight: 700;
+        }
+      }
+
+      &:after {
+        background-color: $color-offBlack;
+        bottom: 0;
+        content: '';
+        height: 2px;
+        left: 0;
+        position: absolute;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        width: 100%;
+      }
+
+      &.is-hovered {
+        &:after {
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+      }
+
+      &.not-hovered {
+        &:after {
+          transform-origin: right;
+          transform: scaleX(0);
+        }
+      }
+    }
+  }
+}

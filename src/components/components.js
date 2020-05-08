@@ -3,6 +3,7 @@ import Page from './page'
 import Grid from './grid'
 import Teaser from './teaser'
 import Feature from './feature'
+import Main from './main/main'
 import NavItem from './nav_item'
 import Splash from './splash/Splash'
 import ComponentNotFound from './component_not_found'
@@ -14,7 +15,8 @@ const ComponentList = {
   grid: Grid,
   teaser: Teaser,
   feature: Feature,
-  nav_item: NavItem
+  nav_item: NavItem,
+  Main
 }
 
 const Components = (type) => {

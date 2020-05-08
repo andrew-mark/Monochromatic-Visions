@@ -4,15 +4,18 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: $color-white;
+  background-color: $color-offBlack;
   font-size: 16px;
-  // font-family: 'Moderat-Medium', sans-serif;
+  font-family: acumin-pro, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   overflow-x: hidden;
 }
 
 body {
+  background-color: $color-offBlack;
   color: $color-white;
-  font-family: Helvetica, sans-serif;
+  font-family: acumin-pro, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 
@@ -31,12 +34,12 @@ body {
 }
 
 p {
-  // color: $color-purple;
+  color: $color-black;
   margin: 0;
 }
 
 a {
-  color: $color-red;
+  color: $color-black;
   // font-family: 'Moderat-Bold';
   text-decoration: none;
 }
@@ -61,6 +64,9 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: acumin-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   margin: 0;
   padding: 0;
 }

@@ -1,0 +1,16 @@
+.video {
+  @include grid-cell(12);
+  display: flex;
+  transition: all 0.3s ease 0.3s;
+
+  &.menu-open {
+    @include grid-cell(10);
+    transition: all 0.3s ease-in;
+  }
+
+  &-video {
+    height: calc(90vh - 65px); /* Fallback */
+    height: calc(var(--vh, 1vh) * 90 - 65px);
+    object-fit: cover;
+  }
+}

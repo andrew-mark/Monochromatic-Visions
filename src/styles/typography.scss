@@ -1,8 +1,6 @@
-$font-family-default: 'Moderat-Medium', 'Arial', 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
-$font-family-light: 'Moderat-Light', 'Arial', 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
-$font-family-bold: 'Moderat-Bold', 'Arial', 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+$font-family-default: 'acumin-pro', 'Arial', 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
 $min_width: 375px;
-$max_width: 1280px;
+$max_width: 1600px;
 
 // Typography
 // fontSize and lineHeight contain a list of 2 values (ordered)
@@ -10,222 +8,61 @@ $max_width: 1280px;
 // Use: @include typography('typo-name');
 
 $font-specifications: (
-  stage: (
+  title: (
     fontSizes: (
-      60px,
-      48px,
+      32px,
+      20px,
     ),
-    fontFamily: $font-family-bold,
-    fontWeight: 700,
+    fontFamily: $font-family-default,
+    fontWeight: 400,
     lineHeights: (
       1.1,
       1.1,
     ),
+    textTransform: uppercase,
+    fontStyle: normal
   ),
   h1: (
     fontSizes: (
       50px,
       40px,
     ),
-    fontFamily: $font-family-bold,
+    fontFamily: $font-family-default,
     fontWeight: 700,
     lineHeights: (
-      1.3,
-      1.3,
+      1.1,
+      1.1,
     ),
+    textTransform: uppercase,
+    fontStyle: normal
   ),
-  h2: (
+  p: (
     fontSizes: (
-      38px,
-      34px,
+      16px,
+      16px,
     ),
-    fontFamily: $font-family-bold,
-    fontWeight: 700,
+    fontFamily: $font-family-default,
+    fontWeight: 400,
     lineHeights: (
-      1.3,
-      1.3,
+      1.5,
+      1.5,
     ),
+    fontStyle: normal
   ),
-  h3: (
-    fontSizes: (
-      28px,
-      25px,
-    ),
-    fontFamily: $font-family-bold,
-    fontWeight: 700,
-    lineHeights: (
-      1.3,
-      1.3,
-    ),
-  ),
-  h4: (
+  menu: (
     fontSizes: (
       20px,
-      20px,
-    ),
-    fontFamily: $font-family-bold,
-    fontWeight: 700,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  copy: (
-    fontSizes: (
-      18px,
       16px,
     ),
     fontFamily: $font-family-default,
-    fontWeight: 500,
+    fontWeight: 400,
     lineHeights: (
-      1.4,
-      1.4,
+      1.5,
+      1.5,
     ),
+    textTransform: uppercase,
+    fontStyle: normal
   ),
-  copy-bold: (
-    fontSizes: (
-      18px,
-      16px,
-    ),
-    fontFamily: $font-family-bold,
-    fontWeight: 700,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  copy-light: (
-    fontSizes: (
-      18px,
-      16px,
-    ),
-    fontFamily: $font-family-light,
-    fontWeight: 300,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  paragraph: (
-    fontSizes: (
-      16px,
-      16px,
-    ),
-    fontFamily: $font-family-default,
-    fontWeight: 500,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  paragraph-bold: (
-    fontSizes: (
-      16px,
-      16px,
-    ),
-    fontFamily: $font-family-bold,
-    fontWeight: 700,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  paragraph-light: (
-    fontSizes: (
-      16px,
-      16px,
-    ),
-    fontFamily: $font-family-light,
-    fontWeight: 300,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  cta: (
-    fontSizes: (
-      16px,
-      16px,
-    ),
-    fontFamily: $font-family-default,
-    fontWeight: 500,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  cta-small: (
-    fontSizes: (
-      12px,
-      12px,
-    ),
-    fontFamily: $font-family-default,
-    fontWeight: 500,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  label-light: (
-    fontSizes: (
-      14px,
-      14px,
-    ),
-    fontFamily: $font-family-light,
-    fontWeight: 300,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  label: (
-    fontSizes: (
-      14px,
-      14px,
-    ),
-    fontFamily: $font-family-default,
-    fontWeight: 500,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  label-small: (
-    fontSizes: (
-      12px,
-      12px,
-    ),
-    fontFamily: $font-family-default,
-    fontWeight: 500,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  label-small-light: (
-    fontSizes: (
-      12px,
-      12px,
-    ),
-    fontFamily: $font-family-light,
-    fontWeight: 300,
-    lineHeights: (
-      1.4,
-      1.4,
-    ),
-  ),
-  mobile-nav: (
-    fontSizes: (
-      55px,
-      55px,
-    ),
-    fontFamily: $font-family-bold,
-    fontWeight: 700,
-    lineHeights: (
-      1.3,
-      1.3,
-    ),
-  )
 );
 
 @function map-deep-get($map, $keys...) {
@@ -245,18 +82,21 @@ $font-specifications: (
     $weight: map-deep-get($font-specifications, $name, 'fontWeight');
     $heights: map-deep-get($font-specifications, $name, 'lineHeights');
     $transform: map-deep-get($font-specifications, $name, 'textTransform');
+    $style: map-deep-get($font-specifications, $name, 'fontStyle');
 
+    color: $color-grey;
     font-family: $family;
-    font-size: nth($sizes, 2);
+    font-style: $style;
     font-weight: $weight;
     line-height: nth($heights, 2);
+
+    @include fluid-type($min_width, $max_width, nth($sizes, 2), nth($sizes, 1));
 
     @if $transform {
       text-transform: $transform;
     }
 
     @include respond-to('small') {
-      font-size: nth($sizes, 1);
       line-height: nth($heights, 1);
     }
   }

@@ -164,24 +164,3 @@
 @function get-z($layer) {
   @return index($z-layers, $layer);
 }
-
-// Custom mixins for styles
-
-@mixin form-container {
-  width: 100%;
-  max-width: $form-max-width;
-}
-
-@mixin form-group {
-  width: 100%;
-}
-
-@mixin component-padding {
-  padding-top: $component-padding-top-mobile;
-  padding-bottom: $component-padding-bottom-mobile;
-
-  @include respond-to(small) {
-    padding-top: $component-padding-top-desktop;
-    padding-bottom: $component-padding-bottom-desktop;
-  }
-}
