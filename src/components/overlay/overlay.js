@@ -23,7 +23,7 @@ const Overlay = (props) => {
     open: {
       x: '0%',
       transition: {
-        ease: 'easeIn',
+        ease: 'easeOut',
         duration: 0.3
       }
     },
