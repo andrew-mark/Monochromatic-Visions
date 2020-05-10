@@ -86,13 +86,16 @@ const Overlay = (props) => {
               {listItems.map((item, index) => (
                 <motion.li
                   key={index}
-                  initial={false}
                   onHoverStart={() => setHoverState({index: index, value: true}) }
                   onHoverEnd={() => setHoverState({index: -1 , value: false}) }
-                  variants={menuItems}
                   className={`overlay-menuItem ${hoverState.index === index && hoverState.value ? 'is-hovered': 'not-hovered'}`}
                   >
-                  <button className={`overlay-menuItemButton ${activeItem === index && panelOpen ? 'is-active' : 'not-active'}`} onClick={() => { onPanelOpen(); onSelection(index)} }>{item.label}</button>
+                  <motion.button className={`overlay-menuItemButton ${activeItem === index && panelOpen ? 'is-active' : 'not-active'}`}
+                  initial={false}
+                    variants={menuItems}
+                    onClick={() => { onPanelOpen(); onSelection(index)} }>
+                    {item.label}
+                  </motion.button>
                 </motion.li>
               ))}
             </motion.ul>
