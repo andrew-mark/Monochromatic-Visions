@@ -1,17 +1,19 @@
 .video {
   @include grid-cell(12);
   display: flex;
-  transition: all 0.3s ease-out 0.4s;
-  transform-origin: left;
+  // transition: all 0.3s ease-out 0.4s;
+  // transform-origin: left;
 
   &.menu-open {
-    transform: scaleX(0.8);
-    transition: all 0.3s ease-out;
+    // transform: scaleX(0.8);
+    // transition: all 0.3s ease-out;
   }
 
   &-video {
+    display: block;
     height: calc(90vh - 65px); /* Fallback */
     height: calc(var(--vh, 1vh) * 90 - 65px);
     object-fit: cover;
+    width: 100%;
   }
 }

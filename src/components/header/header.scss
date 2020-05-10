@@ -4,12 +4,15 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  height: 65px;
+  mix-blend-mode: exclusion;
   padding: $spacing-system-16 0;
   width: 100%;
+  z-index: 1;
 
   &-headline {
     @include typography('title');
-    letter-spacing: 40px;
+    letter-spacing: 30px;
   }
 
   &-burgerIcon {

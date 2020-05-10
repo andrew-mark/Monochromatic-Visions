@@ -1,8 +1,9 @@
 .content {
   height: calc(100vh - 60px);
-  position: absolute;
+  left: 0;
+  position: fixed;
   top: 60px;
-  width: 66.6667%;
+  width: 60%;
   transform-origin: left;
 
   &-container {
