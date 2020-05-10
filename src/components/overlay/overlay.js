@@ -22,15 +22,15 @@ const Overlay = (props) => {
   const animateMenu = {
     open: {
       x: '0%',
-      // opacity: 1,
+      opacity: 1,
       transition: {
         ease: 'easeOut',
-        duration: 0.4
+        duration: 0.4,
       }
     },
     closed: {
-      x: '160%',
-      // opacity: 0,
+      x: '161%',
+      opacity: 0.9,
       transition: {
         ease: 'easeIn',
         duration: 0.4,
@@ -48,7 +48,7 @@ const Overlay = (props) => {
       }
     },
     closed: {
-      x: '100%',
+      x: '101%',
       transition: {
         ease: 'easeIn',
         duration: 0.4,
