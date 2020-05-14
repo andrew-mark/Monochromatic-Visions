@@ -2,13 +2,18 @@ import React, {useState, useContext} from 'react'
 import './content.scss'
 import ContentPanelContext from '../../context/contentPanel'
 import { motion } from "framer-motion"
+import Tracklist from '@components/tracklist/tracklist'
+
+export const components = {
+  Tracklist
+}
 
 const Content = (props) => {
   const panel = useContext(ContentPanelContext)[0]
 
   const animateContent = {
     open: {
-      scaleX: 1,
+      x: '0',
       opacity: 1,
       transition: {
         ease: 'easeOut',
@@ -16,23 +21,20 @@ const Content = (props) => {
       }
     },
     closed: {
-      scaleX: 0.2,
-      opacity: 0,
+      x: '-100%',
+      opacity: 1,
       transition: {
         ease: 'easeOut',
-        duration: 0.25
+        duration: 0.25,
+        when: "afterChildren"
       }
     }
   }
 
   return (
-    <motion.div variants={animateContent} initial={false} animate={panel ? "open" : "closed"} className="content">
-      <div className="content-wrapper">
-        <div className="content-container">
-          <div className="content-panel">
-            here goes some content
-          </div>
-        </div>
+    <motion.div variants={animateContent} initial={false} animate={panel.open ? "open" : "closed"} className="content">
+      <div className="content-panel">
+        {React.createElement((components['Tracklist']), {})}
       </div>
     </motion.div>
   )

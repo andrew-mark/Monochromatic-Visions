@@ -1,6 +1,8 @@
 .video {
   @include grid-cell(12);
   display: flex;
+  height: calc(100vh - 165px ); /* Fallback */
+  height: calc(var(--vh, 1vh) * 100 - 165px);
   // transition: all 0.3s ease-out 0.4s;
   // transform-origin: left;
 
@@ -9,11 +11,38 @@
     // transition: all 0.3s ease-out;
   }
 
+  h1 {
+    // color: $color-black;
+    color:transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // height: calc(90vh - 65px); /* Fallback */
+    // height: calc(var(--vh, 1vh) * 90 - 65px);
+    font-size: 16vw;
+    height: 100%;
+    width: 100%;
+
+    span { 
+      display: flex;
+      align-items: center;
+      background: url('../../static/water.gif') -20px -20px repeat;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display:block;
+      background-position: 63% 60%;
+    }
+  }
   &-video {
     display: block;
-    height: calc(90vh - 65px); /* Fallback */
-    height: calc(var(--vh, 1vh) * 90 - 65px);
+    height: calc(100vh - 165px); /* Fallback */
+    height: calc(var(--vh, 1vh) * 100 - 165px);
     object-fit: cover;
     width: 100%;
+  }
+
+  &-albumTitle {
+    bottom: 20px;
+    position: absolute;
   }
 }

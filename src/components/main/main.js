@@ -4,6 +4,7 @@ import Header from '@components/header/header'
 import Video from '@components/video/video'
 import Overlay from '@components/overlay/overlay'
 import Content from '@components/content/content'
+import AudioPlayer from '@components/audio-player/AudioPlayer'
 import MenuContext from '../../context/menu'
 import ContentPanelContext from '../../context/contentPanel'
 
@@ -35,6 +36,7 @@ const Main = (props) => {
                 <Video />
                 <Overlay />
                 <Content />
+                <AudioPlayer />
               </div>
             </div>
           </div>

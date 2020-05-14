@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Andrew Mark <andrew.mark.design@gmail.com>",
   "dependencies": {
+    "animejs": "^3.2.0",
     "framer-motion": "^1.8.4",
     "gatsby": "^2.0.19",
     "gatsby-image": "^2.0.15",

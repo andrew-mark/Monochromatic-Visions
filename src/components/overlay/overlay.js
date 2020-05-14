@@ -6,31 +6,25 @@ import { motion } from "framer-motion"
 
 const Overlay = (props) => {
   const menu = useContext(MenuContext)[0]
-  const panelOpen = useContext(ContentPanelContext)[0]
   const [panel, openPanel] = useContext(ContentPanelContext);
-  const onPanelOpen = () => {
-    openPanel(true)
+  const onPanelOpen = (index) => {
+    openPanel({open: true, content: index})
   }
 
   const [hoverState, setHoverState] = useState({index: -1, value: false})
-  const [activeItem, setActiveItem] = useState(false)
-
-  const onSelection = (index) => {
-    setActiveItem(index)
-  }
 
   const animateMenu = {
     open: {
-      x: '0%',
-      opacity: 1,
+      scaleX: 1,
+      // x: '0%',
       transition: {
         ease: 'easeOut',
         duration: 0.4,
       }
     },
     closed: {
-      x: '161%',
-      opacity: 0.9,
+      // x: '161%',
+      scaleX: 0,
       transition: {
         ease: 'easeIn',
         duration: 0.4,
@@ -41,14 +35,16 @@ const Overlay = (props) => {
 
   const animateExclusion = {
     open: {
-      x: '0%',
+      scaleX: 1,
+      // x: '0%',
       transition: {
         ease: 'easeOut',
         duration: 0.4
       }
     },
     closed: {
-      x: '101%',
+      scaleX: 0,
+      // x: '101%',
       transition: {
         ease: 'easeIn',
         duration: 0.4,
@@ -90,10 +86,10 @@ const Overlay = (props) => {
       label: 'Who',
     },
     {
-      label: 'Where'
+      label: 'Album'
     },
     {
-      label: 'What'
+      label: 'Gigs'
     }
   ]
 
@@ -105,7 +101,6 @@ const Overlay = (props) => {
         <div className="overlay-wrapper -wrapper">
           <div className="overlay-container -container">
             <motion.div className={`overlay-right ${menu ? "is-open" : "is-closed"}`}  initial={false} variants={animateMenu}>
-              
               <motion.div className="overlay-rightContainer">
                 <motion.ul className="overlay-menu" variants={menuList}>
                   {listItems.map((item, index) => (
@@ -115,10 +110,10 @@ const Overlay = (props) => {
                       onHoverEnd={() => setHoverState({index: -1 , value: false}) }
                       className={`overlay-menuItem ${hoverState.index === index && hoverState.value ? 'is-hovered': 'not-hovered'}`}
                       >
-                      <motion.button className={`overlay-menuItemButton ${activeItem === index && panelOpen ? 'is-active' : 'not-active'}`}
-                      initial={false}
+                      <motion.button className={`overlay-menuItemButton ${panel.content === index && panel.open ? 'is-active' : 'not-active'}`}
+                        initial={false}
                         variants={menuItems}
-                        onClick={() => { onPanelOpen(); onSelection(index)} }>
+                        onClick={() => { onPanelOpen(index)} }>
                         {item.label}
                       </motion.button>
                     </motion.li>

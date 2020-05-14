@@ -1,13 +1,13 @@
 .main {
-  background-color: $color-offBlack;
+  background-color: $color-black;
   display: flex;
   position: relative;
   height: 100vh; /* Fallback */
   height: calc(var(--vh, 1vh) * 100);
 
-  // &-wrapper {
-  //   @include grid-wrapper();
-  // }
+  &-wrapper {
+    width: 100%;
+  }
 
   // &-container {
   //   @include grid-container();

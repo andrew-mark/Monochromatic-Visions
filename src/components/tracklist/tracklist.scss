@@ -1,0 +1,16 @@
+.tracklist {
+  width: 80%;
+  
+  &-title {
+    margin-bottom: 32px;
+  }
+  
+  &-track {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-play {
+    fill: $color-white;
+  }
+}

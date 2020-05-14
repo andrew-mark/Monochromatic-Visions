@@ -7,19 +7,19 @@ import { motion } from "framer-motion"
 const Header = ({headline}) => {
   const [menu, openMenu] = useContext(MenuContext);
   const [panel, openPanel] = useContext(ContentPanelContext);
-  const [letterSpacing, setLetterSpacing] = useState(0)
+  const [letterSpacing, setLetterSpacing] = useState(5)
   const onOpenMenu = () => {
     menu ? openMenu(false) : openMenu(true)
     menu && openPanel(false)
   }
 
-  useEffect(() => {
-    getViewportSingleUnit()
-    window.addEventListener('resize', function onResizeHandler() {getViewportSingleUnit()})
-    return () => {
-      window.removeEventListener('resize', function onResizeHandler() {getViewportSingleUnit()})
-    }
-  }, [])
+  // useEffect(() => {
+  //   getViewportSingleUnit()
+  //   window.addEventListener('resize', function onResizeHandler() {getViewportSingleUnit()})
+  //   return () => {
+  //     window.removeEventListener('resize', function onResizeHandler() {getViewportSingleUnit()})
+  //   }
+  // }, [])
 
   const getViewportSingleUnit = () => {
     const vw = window.innerWidth * 0.01
@@ -29,7 +29,7 @@ const Header = ({headline}) => {
   }
 
   return (
-    <div className="header">
+    <div className={`header ${menu ? 'is-active' : 'not-active'}`}>
       <motion.h1 animate={{letterSpacing: `${letterSpacing}px`}} className="header-headline">{headline}</motion.h1>
       <button onClick={() => onOpenMenu()} className={`header-burgerIcon hamburger hamburger--spin ${menu ? 'is-active' : 'not-active'}`} type="button">
         <span className="hamburger-box">
