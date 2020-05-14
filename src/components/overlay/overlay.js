@@ -97,7 +97,7 @@ const Overlay = (props) => {
     <React.Fragment>
       <motion.div className="overlay-exclusion" variants={animateExclusion} initial={false} animate={menu ? "open" : "closed"}>
       </motion.div>
-      <motion.div animate={menu ? "open" : "closed"} className="overlay">
+      <motion.div animate={menu ? "open" : "closed"} initial={false} className="overlay">
         <div className="overlay-wrapper -wrapper">
           <div className="overlay-container -container">
             <motion.div className={`overlay-right ${menu ? "is-open" : "is-closed"}`}  initial={false} variants={animateMenu}>

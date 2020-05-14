@@ -20,7 +20,6 @@
     top: 65px;
     transform-origin: right;
     transform: scaleX(0);
-    // transform: translateX(100%);
     width: 40%;
   }
 
@@ -32,10 +31,8 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    // opacity: 0;
     position: relative;
     transform: scaleX(0);
-    // transform: translateX(161%);
     transform-origin: right;
 
     &Container {
