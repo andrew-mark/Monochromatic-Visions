@@ -15,7 +15,7 @@
     @include grid-cell(12);
 
     align-items: center;
-    background-color: $color-offBlack;
+    background-color: $color-black;
     display: flex;
     height: calc(100vh - 165px); /* Fallback */
     height: calc(var(--vh, 1vh) * 100 - 165px);
