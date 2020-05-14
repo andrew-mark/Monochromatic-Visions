@@ -31,7 +31,7 @@ const Header = ({headline}) => {
   return (
     <div className={`header ${menu ? 'is-active' : 'not-active'}`}>
       <motion.h1 animate={{letterSpacing: `${letterSpacing}px`}} className="header-headline">{headline}</motion.h1>
-      <button onClick={() => onOpenMenu()} className={`header-burgerIcon hamburger hamburger--spin ${menu ? 'is-active' : 'not-active'}`} type="button">
+      <button onClick={() => onOpenMenu()} className={`header-burgerIcon hamburger hamburger--squeeze ${menu ? 'is-active' : 'not-active'}`} type="button">
         <span className="hamburger-box">
           <span className="hamburger-inner"></span>
         </span>
