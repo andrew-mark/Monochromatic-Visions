@@ -1,12 +1,8 @@
 import React, {useContext} from 'react'
 import './tracklist.scss'
 import { motion } from "framer-motion"
-import ContentPanelContext from '../../context/contentPanel'
-import Play from '@assets/icons/play.svg'
 
 const Tracklist = (props) => {
-  const content = useContext(ContentPanelContext);
-
   const tracks = [
     { trackName: 'Intro', },
     { trackName: 'Mysterious skin' },
@@ -22,9 +18,6 @@ const Tracklist = (props) => {
   const menuList = {
     open: {
       transition: { staggerChildren: 0.07, delayChildren: 0.4 }
-    },
-    closed: {
-      transition: { staggerChildren: 0.05, delayChildren: 0, staggerDirection: -1}
     }
   }
 
@@ -34,16 +27,13 @@ const Tracklist = (props) => {
       opacity: 1,
       transition: {
         ease: 'easeOut',
-        duration: 0.3
+        duration: 1,
+        delay: 5
       }
     },
     closed: {
       y: '150%',
-      opacity: 0,
-      transition: {
-        ease: 'easeOut',
-        duration: 0.3
-      }
+      opacity: 0
     }
   }
   const tracklistTitle = {
@@ -52,32 +42,27 @@ const Tracklist = (props) => {
       opacity: 1,
       transition: {
         ease: 'easeOut',
-        duration: 0.3,
-        delay: 0.4
+        duration: 1,
+        delay: 5
       }
     },
     closed: {
       y: '150%',
-      opacity: 0,
-      transition: {
-        ease: 'easeOut',
-        duration: 0.3,
-        delay: 0.3
-      }
+      opacity: 0
     }
   }
 
   return (
-    <div className="tracklist" animate={content.open ? "open" : "closed"}>
-      <motion.h2 variants={tracklistTitle} className="tracklist-title">Too Close To The Sea</motion.h2>
-      <motion.ul className="tracklist-tracks" variants={menuList}>
+    <div className="tracklist">
+      <motion.h2 variants={tracklistTitle} initial="closed" animate="open" className="tracklist-title">Too Close To The Sea</motion.h2>
+      <motion.ul className="tracklist-tracks" initial="closed" animate="open" variants={menuList}>
         {tracks.map((track,index) => (
-          <motion.li key={index} variants={menuItems} className="tracklist-track">
-            <span>{track.trackName}</span>
-            <span><Play className="tracklist-play" /></span>
+          <motion.li key={index} initial="closed" animate="open" variants={menuItems} className="tracklist-track">
+            <span className="tracklist-trackNumber"><span>0</span><span>{index + 1}.</span></span><span>{track.trackName}</span>
           </motion.li>
         ))}
       </motion.ul>
+      <a className="tracklist-buyNow" target="_blank" href="https://monochromaticvisions.bandcamp.com/">Buy now</a>
     </div>
   )
 }

@@ -1,0 +1,33 @@
+.footer {
+  @include grid-cell(12);
+
+  height: 65px;
+
+  &-icons {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &-iconLink {
+    color: $color-grey;
+    margin-right: 16px;
+  }
+
+  &-instagram {
+    width: 24px;
+    height: 24px;
+  }
+
+  &-soundcloud {
+    fill: $color-white;
+    width: 35px;
+    height: 33px;
+  }
+
+  &-bandcamp {
+    fill: $color-white;
+    width: 40px;
+    height: 40px;
+  }
+}

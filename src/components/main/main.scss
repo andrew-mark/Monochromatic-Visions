@@ -15,5 +15,13 @@
 
   &-content {
     width: 100%;
+
+    &-content {
+      // @include grid-cell(12);
+      
+      display: flex;
+      height: calc(100vh - 130px);
+      width: 100%;
+    }
   }
 }

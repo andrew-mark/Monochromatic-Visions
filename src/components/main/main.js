@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import './main.scss'
 import Header from '@components/header/header'
+import Footer from '@components/footer/footer'
 import Video from '@components/video/video'
-import Overlay from '@components/overlay/overlay'
-import Content from '@components/content/content'
-import AudioPlayer from '@components/audio-player/AudioPlayer'
-import MenuContext from '../../context/menu'
-import ContentPanelContext from '../../context/contentPanel'
+import Intro from '@components/intro/Intro'
+import Tracklist from '@components/tracklist/tracklist'
+
+export const components = {
+  Tracklist
+}
 
 const Main = (props) => {
   const menu = useState(false);
@@ -26,23 +28,21 @@ const Main = (props) => {
   }
 
   return (
-    <MenuContext.Provider value={menu}>
-      <ContentPanelContext.Provider value={panel}>
-        <div className="main">
-          <div className="main-wrapper -wrapper">
-            <div className="main-container -container">
-              <div className="main-content">
-                <Header headline={props.blok.headline} />
-                <Video />
-                <Overlay />
-                <Content />
-                <AudioPlayer />
-              </div>
+    <div className="main">
+      <div className="main-wrapper -wrapper">
+        <div className="main-container -container">
+          <div className="main-content">
+            <Intro />
+            <Header headline={props.blok.headline} />
+            <div className="main-content-content">
+              {React.createElement((components['Tracklist']), {})}
+              <Video />
             </div>
+  <Footer />
           </div>
         </div>
-      </ContentPanelContext.Provider>
-    </MenuContext.Provider>
+      </div>
+    </div>
   )
 }
 

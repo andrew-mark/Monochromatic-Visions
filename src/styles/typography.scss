@@ -36,6 +36,19 @@ $font-specifications: (
     textTransform: uppercase,
     fontStyle: normal
   ),
+  h2: (
+    fontSizes: (
+      36px,
+      28px,
+    ),
+    fontFamily: $font-family-default,
+    fontWeight: 400,
+    lineHeights: (
+      1.1,
+      1.1,
+    ),
+    fontStyle: normal
+  ),
   p: (
     fontSizes: (
       16px,

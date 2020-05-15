@@ -16,7 +16,7 @@
   &-headline {
     @include typography('title');
     color: $color-white;
-    // letter-spacing: 5px;
+    letter-spacing: 5px;
   }
 
   &-burgerIcon {

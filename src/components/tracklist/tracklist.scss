@@ -1,16 +1,52 @@
 .tracklist {
-  width: 80%;
+  @include grid-cell(5);
+
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-topline {
+    @include typography('p');
+  }
 
   &-title {
+    @include typography('h2');
+
+    margin-bottom: 32px;
+  }
+
+  &-tracks {
     margin-bottom: 32px;
   }
 
   &-track {
+    @include typography('p');
     display: flex;
-    justify-content: space-between;
+    padding: 5px 0;
+
+    &Number {
+      @include typography('p');
+      display: flex;
+      justify-content: space-between;
+      margin-right: 24px;
+      width: 23px;
+    }
   }
 
-  &-play {
-    fill: $color-white;
+  &-buyNow {
+    @include typography('p');
+
+    appearance: none;
+    background-color: $color-white;
+    border-radius: 2px;
+    border: $color-white;
+    color: $color-black;
+    padding: 10px 32px;
+    transition: all 0.15s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
   }
 }
