@@ -10,11 +10,11 @@ $max_width: 1600px;
 $font-specifications: (
   title: (
     fontSizes: (
-      32px,
+      22px,
       20px,
     ),
     fontFamily: $font-family-default,
-    fontWeight: 400,
+    fontWeight: 200,
     lineHeights: (
       1.1,
       1.1,
@@ -34,20 +34,37 @@ $font-specifications: (
       1.1,
     ),
     textTransform: uppercase,
-    fontStyle: normal
+    fontStyle: normal,
+    color: white
   ),
   h2: (
     fontSizes: (
-      36px,
       28px,
+      24px,
     ),
     fontFamily: $font-family-default,
-    fontWeight: 400,
+    fontWeight: 200,
     lineHeights: (
       1.1,
       1.1,
     ),
-    fontStyle: normal
+    textTransform: uppercase,
+    fontStyle: normal,
+    color: black
+  ),
+  h3: (
+    fontSizes: (
+      22px,
+      20px,
+    ),
+    fontFamily: $font-family-default,
+    fontWeight: 200,
+    lineHeights: (
+      1.1,
+      1.1,
+    ),
+    fontStyle: normal,
+    color: black
   ),
   p: (
     fontSizes: (
@@ -55,12 +72,27 @@ $font-specifications: (
       16px,
     ),
     fontFamily: $font-family-default,
-    fontWeight: 400,
+    fontWeight: 200,
     lineHeights: (
       1.5,
       1.5,
     ),
-    fontStyle: normal
+    fontStyle: normal,
+    color: black
+  ),
+  p-inverse: (
+    fontSizes: (
+      16px,
+      16px,
+    ),
+    fontFamily: $font-family-default,
+    fontWeight: 200,
+    lineHeights: (
+      1.5,
+      1.5,
+    ),
+    fontStyle: normal,
+    color: white
   ),
   menu: (
     fontSizes: (
@@ -74,7 +106,8 @@ $font-specifications: (
       1.5,
     ),
     textTransform: uppercase,
-    fontStyle: normal
+    fontStyle: normal,
+    color: white
   ),
 );
 
@@ -96,8 +129,9 @@ $font-specifications: (
     $heights: map-deep-get($font-specifications, $name, 'lineHeights');
     $transform: map-deep-get($font-specifications, $name, 'textTransform');
     $style: map-deep-get($font-specifications, $name, 'fontStyle');
+    $color: map-deep-get($font-specifications, $name, 'color');
 
-    color: $color-grey;
+    color: $color;
     font-family: $family;
     font-style: $style;
     font-weight: $weight;

@@ -5,8 +5,9 @@
   display: flex;
   justify-content: space-between;
   height: 65px;
-  padding: $spacing-system-16 0;
+  mix-blend-mode: exclusion;
   width: 100%;
+  position: fixed;
   z-index: 1;
 
   &.is-active {
@@ -28,6 +29,17 @@
 
     &.is-active {
       z-index: 1;
+    }
+  }
+
+  &-menuList {
+    display: flex;
+
+    &Item {
+      @include typography('p-inverse');
+
+      margin-left: 20px;
+      text-transform: uppercase;
     }
   }
 }

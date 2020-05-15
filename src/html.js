@@ -11,7 +11,7 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           {this.props.headComponents}
-          <link rel="stylesheet" href="https://use.typekit.net/qnc1owk.css"></link>
+          <link rel="stylesheet" href="https://use.typekit.net/ynv0aud.css"></link>
         </head>
         <body>
           <div

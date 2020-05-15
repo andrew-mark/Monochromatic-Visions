@@ -1,7 +1,19 @@
 .footer {
   @include grid-cell(12);
+  background-color: $color-white;
+  
 
-  height: 65px;
+  height: 100vh; /* Fallback */
+  height: calc(var(--vh, 1vh) * 100);
+
+  &-content {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
 
   &-icons {
     align-items: center;
@@ -10,8 +22,12 @@
   }
 
   &-iconLink {
-    color: $color-grey;
+    color: $color-black;
     margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &-instagram {
@@ -19,14 +35,49 @@
     height: 24px;
   }
 
+  &-shows {
+    flex: 1;
+  }
+
+  &-showsTitle {
+    @include typography('h2');
+
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  &-showsText {
+    @include typography('p');
+    margin-bottom: 40px;
+  }
+
+  &-button {
+    @include typography('p');
+
+    appearance: none;
+    background-color: $color-black;
+    border-radius: 2px;
+    border: $color-black;
+    color: $color-white;
+    display: inline-flex;
+    padding: 10px 32px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.15s ease;
+
+    &:hover {
+      transform: translate(-50%, -2px);
+    }
+  }
+
   &-soundcloud {
-    fill: $color-white;
+    fill: $color-black;
     width: 35px;
     height: 33px;
   }
 
   &-bandcamp {
-    fill: $color-white;
+    fill: $color-black;
     width: 40px;
     height: 40px;
   }

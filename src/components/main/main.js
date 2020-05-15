@@ -32,13 +32,11 @@ const Main = (props) => {
       <div className="main-wrapper -wrapper">
         <div className="main-container -container">
           <div className="main-content">
-            <Intro />
             <Header headline={props.blok.headline} />
             <div className="main-content-content">
-              {React.createElement((components['Tracklist']), {})}
               <Video />
             </div>
-  <Footer />
+            <Footer />
           </div>
         </div>
       </div>

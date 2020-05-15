@@ -1,0 +1,41 @@
+.news {
+  margin-bottom: 100px;
+
+  &-headline {
+    @include typography('h2');
+
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  &-items {
+    margin-bottom: 32px;
+  }
+
+  &-title {
+    @include typography('h3');
+  }
+
+  &-text {
+    @include typography('p');
+  }
+
+  &-button {
+    @include typography('p');
+
+    appearance: none;
+    background-color: $color-black;
+    border-radius: 2px;
+    border: $color-black;
+    color: $color-white;
+    display: inline-flex;
+    padding: 10px 32px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.15s ease;
+
+    &:hover {
+      transform: translate(-50%, -2px);
+    }
+  }
+}
