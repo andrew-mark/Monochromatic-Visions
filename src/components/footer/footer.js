@@ -1,7 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
 import './footer.scss'
-import MenuContext from '../../context/menu'
-import ContentPanelContext from '../../context/contentPanel'
 import { motion } from "framer-motion"
 import Facebook from '@assets/icons/facebook.svg'
 import Instagram from '@assets/icons/instagram.svg'
@@ -9,14 +7,7 @@ import Bandcamp from '@assets/icons/bandcamp.svg'
 import Soundcloud from '@assets/icons/soundcloud.svg'
 
 const Footer = ({headline}) => {
-  const [menu, openMenu] = useContext(MenuContext);
-  const [panel, openPanel] = useContext(ContentPanelContext);
-  const [letterSpacing, setLetterSpacing] = useState(5)
-  const onOpenMenu = () => {
-    menu ? openMenu(false) : openMenu(true)
-    menu && openPanel(false)
-  }
-
+ 
   // useEffect(() => {
   //   getViewportSingleUnit()
   //   window.addEventListener('resize', function onResizeHandler() {getViewportSingleUnit()})
@@ -33,7 +24,7 @@ const Footer = ({headline}) => {
   }
 
   return (
-    <div className={`footer ${menu ? 'is-active' : 'not-active'}`}>
+    <div className={`footer`}>
       <div className="footer-icons">
         <a className="footer-iconLink" href="https://www.monochromaticvisions.bandcamp.com/">
           <Bandcamp className="footer-bandcamp" />
