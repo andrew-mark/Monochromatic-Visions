@@ -1,17 +1,24 @@
-.news {
+.shows {
   @include grid-cell(12);
-
   margin-bottom: 60px;
+  border-top: 1px solid $color-grey;
+  flex: 1;
+  padding-top: 60px;
 
-  &-headline {
+  &-showsTitle {
     @include typography('h2');
 
     margin-bottom: 48px;
     text-align: center;
   }
 
-  &-items {
+  &-showsText {
+    @include typography('p');
+  }
+
+  &-events {
     @include grid-cell(12);
+    margin-bottom: 48px;
 
     @include respond-to('medium_small') {
       @include grid-pre(1);
@@ -22,46 +29,6 @@
       @include grid-pre(2);
       @include grid-cell(8);
     }
-
-
-    margin-bottom: 48px;
-  }
-
-  &-item {
-    @include grid-cell(12);
-    margin-bottom: 32px;
-
-    @include respond-to('tiny_small') {
-      @include grid-cell(6);
-      margin-bottom: 0;
-    }
-
-    @include respond-to('medium_small') {
-      @include grid-cell(4, 8);
-    }
-
-    &Inner {
-      border-radius: 4px;
-      box-shadow: 0 0 10px 3px rgba(0,0,0,0.05);
-      height: 360px;
-      padding: 16px;
-    }
-
-    &Image {
-      display: flex;
-      height: 60%;
-      margin-bottom: 24px;
-      position: relative;
-    }
-  }
-
-  &-title {
-    @include typography('h3-bold');
-    margin-bottom: 8px;
-  }
-
-  &-text {
-    @include typography('p');
   }
 
   &-button {

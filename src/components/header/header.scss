@@ -1,23 +1,26 @@
 .header {
-  @include grid-cell(12);
-
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  height: 65px;
-  mix-blend-mode: exclusion;
+  background-color: $color-white;
   width: 100%;
   position: fixed;
   z-index: 1;
 
-  &.is-active {
-    mix-blend-mode: exclusion;
+  &-content {
+    @include grid-cell(12);
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
   }
 
   &-headline {
     @include typography('title');
-    color: $color-white;
+    color: $color-black;
     letter-spacing: 5px;
+
+    &Link {
+      color: $color-black;
+    }
   }
 
   &-burgerIcon {
@@ -36,10 +39,38 @@
     display: flex;
 
     &Item {
-      @include typography('p-inverse');
+      @include typography('p');
 
       margin-left: 20px;
       text-transform: uppercase;
+    }
+
+    &Link {
+      @include typography('link');
+      position: relative;
+
+      &:after {
+        background-color: $color-black;
+        content: '';
+        display: block;
+        height: 2px;
+        transform-origin: center;
+        transform: scaleX(0);
+        transition: transform 0.2s;
+        width: 100%;
+      }
+
+      &:hover {
+        &:after {
+          transform: scaleX(1);
+        }
+      }
+
+      &.is-active {
+        &:after {
+          transform: scaleX(1);
+        }
+      }
     }
   }
 }

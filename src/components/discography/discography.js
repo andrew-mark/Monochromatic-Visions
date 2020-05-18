@@ -2,15 +2,24 @@
 import React, {useState, useEffect, useContext} from 'react'
 import './discography.scss'
 import { motion } from "framer-motion"
+import Disc from '../disc/disc'
 
-const Footer = ({headline}) => {
-
+const Footer = (props) => {
+  console.log(props)
   return (
     <div className={`discography`}>
-      <iframe style={{border: 0, width: '350px', height: '350px'}}
-        src="https://bandcamp.com/EmbeddedPlayer/album=3170880229/size=large/bgcol=333333/linkcol=ffffff/minimal=true/transparent=true/" seamless>
-        <a href="http://monochromaticvisions.bandcamp.com/album/waiting-for-the-light">Waiting For The Light by Monochromatic Visions</a>
-      </iframe>
+      <div className="discography-wrapper -wrapper">
+        <div className="discography-container -container">
+          <h1>Discography</h1>
+          <div className="discography-discs">
+            {props.blok.Title.map((disc, index) => (
+              <div className="discography-disc">
+                <Disc key={index} props={disc} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

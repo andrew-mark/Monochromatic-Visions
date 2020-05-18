@@ -5,7 +5,7 @@ $color-white: #FFFFFF;
 $color-grey: #E7E7E7;
 
 // Grid
-$grid-max-content-width: 1600px;
+$grid-max-content-width: 1400px;
 $grid-wrapper-padding-default: 32px;
 $grid-wrapper-padding-mobile: 16px;
 $grid-gutters: 32px;
@@ -20,8 +20,7 @@ $breakpoints: (
   medium_small: 860px,
   medium: 1024px,
   medium_large: 1280px,
-  large: 1440px,
-  extra_large: 1600px,
+  large: 1400px,
 );
 
 $contentArea-padding-default: 80px;

@@ -1,4 +1,5 @@
 $font-family-default: 'acumin-pro', 'Arial', 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+$font-family-display: freight-display-pro, serif;
 $min_width: 375px;
 $max_width: 1600px;
 
@@ -39,32 +40,49 @@ $font-specifications: (
   ),
   h2: (
     fontSizes: (
-      28px,
-      24px,
+      26px,
+      22px,
     ),
-    fontFamily: $font-family-default,
-    fontWeight: 200,
+    fontFamily: $font-family-display,
+    fontWeight: 400,
     lineHeights: (
       1.1,
       1.1,
     ),
     textTransform: uppercase,
     fontStyle: normal,
-    color: black
+    color: black,
+    letterSpacing: 1px
   ),
   h3: (
     fontSizes: (
       22px,
       20px,
     ),
-    fontFamily: $font-family-default,
+    fontFamily: $font-family-display,
     fontWeight: 200,
     lineHeights: (
       1.1,
       1.1,
     ),
     fontStyle: normal,
-    color: black
+    color: black,
+    letterSpacing: 1px
+  ),
+  h3-bold: (
+    fontSizes: (
+      22px,
+      20px,
+    ),
+    fontFamily: $font-family-display,
+    fontWeight: 400,
+    lineHeights: (
+      1.1,
+      1.1,
+    ),
+    fontStyle: normal,
+    color: black,
+    letterSpacing: 1px
   ),
   p: (
     fontSizes: (
@@ -94,9 +112,23 @@ $font-specifications: (
     fontStyle: normal,
     color: white
   ),
+  link: (
+    fontSizes: (
+      14px,
+      14px,
+    ),
+    fontFamily: $font-family-default,
+    fontWeight: 200,
+    lineHeights: (
+      1.5,
+      1.5,
+    ),
+    fontStyle: normal,
+    color: $color-black
+  ),
   menu: (
     fontSizes: (
-      20px,
+      16px,
       16px,
     ),
     fontFamily: $font-family-default,
@@ -130,6 +162,7 @@ $font-specifications: (
     $transform: map-deep-get($font-specifications, $name, 'textTransform');
     $style: map-deep-get($font-specifications, $name, 'fontStyle');
     $color: map-deep-get($font-specifications, $name, 'color');
+    $letterSpacing: map-deep-get($font-specifications, $name, 'letterSpacing');
 
     color: $color;
     font-family: $family;
@@ -141,6 +174,10 @@ $font-specifications: (
 
     @if $transform {
       text-transform: $transform;
+    }
+
+    @if $letterSpacing {
+      letter-spacing: $letterSpacing;
     }
 
     @include respond-to('small') {

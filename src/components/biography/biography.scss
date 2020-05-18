@@ -1,0 +1,31 @@
+.biography {
+  background-color: $color-white;
+  display: flex;
+  position: relative;
+
+  &-video {
+    // height: calc(100vh - 40vh );
+    // height: calc(var(--vh, 1vh) * 100 - 40vh);
+    padding-top: 60px;
+  }
+
+  &-content {
+    @include paddingComponent();
+    @include grid-cell(12);
+    margin-bottom: 48px;
+
+    @include respond-to('medium_small') {
+      @include grid-pre(1);
+      @include grid-cell(10);
+    }
+
+    @include respond-to('medium') {
+      @include grid-pre(2);
+      @include grid-cell(8);
+    }
+
+    p {
+      margin-bottom: 24px;
+    }
+  }
+}

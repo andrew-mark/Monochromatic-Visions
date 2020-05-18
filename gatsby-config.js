@@ -24,6 +24,7 @@ module.exports = {
       options: {
         accessToken: 'wwootHIPmKOgA8RmuQRd0gtt',
         homeSlug: 'home',
+        resolveRelations: ['global_reference.reference'],
         version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
       }
     },

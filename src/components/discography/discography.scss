@@ -1,0 +1,32 @@
+.discography {
+  @include paddingComponent();
+  height: calc(100vh - 60px );
+  height: calc(var(--vh, 1vh) * 100 - 60px);
+
+  h1 {
+    @include grid-cell(12);
+    @include typography('h2');
+
+    margin-bottom: 72px;
+    text-align: center;
+  }
+
+  &-discs {
+    @include grid-cell(12);
+
+    @include respond-to('medium') {
+      @include grid-pre(1);
+      @include grid-cell(10);
+    }
+    display: flex;
+  }
+
+  &-disc {
+    @include grid-cell-size(12);
+
+    @include respond-to('medium') {
+      @include grid-cell-size(4, 10);
+    }
+    margin-bottom: 32px;
+  }
+}

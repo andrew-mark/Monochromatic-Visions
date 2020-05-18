@@ -164,3 +164,13 @@
 @function get-z($layer) {
   @return index($z-layers, $layer);
 }
+
+@mixin paddingComponent() {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @include respond-to('medium_small') {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}

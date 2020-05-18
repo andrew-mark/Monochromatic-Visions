@@ -21,11 +21,12 @@ class StoryblokEntry extends React.Component {
     super(props)
 
     this.state = StoryblokEntry.prepareStory(props)
+    console.log(this.state)
   }
 
   render() {
     let content = this.state.story.content
-
+    console.log(content.component)
     return (
       <React.Fragment>
         {React.createElement(Components(content.component), {key: content._uid, blok: content})}
