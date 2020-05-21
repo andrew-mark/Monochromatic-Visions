@@ -1,0 +1,11 @@
+.contact {
+  @include paddingComponent();
+
+  height: calc(100vh - 120px);
+  height: calc(var(--vh, 1vh) * 100 - 120px);
+
+  &-text {
+    @include grid-cell(12);
+    @include typography('p');
+  }
+}

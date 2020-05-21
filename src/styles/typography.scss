@@ -126,10 +126,39 @@ $font-specifications: (
     fontStyle: normal,
     color: $color-black
   ),
+  link-inverse: (
+    fontSizes: (
+      14px,
+      14px,
+    ),
+    fontFamily: $font-family-default,
+    fontWeight: 200,
+    lineHeights: (
+      1.5,
+      1.5,
+    ),
+    fontStyle: normal,
+    color: $color-white
+  ),
   menu: (
     fontSizes: (
       16px,
       16px,
+    ),
+    fontFamily: $font-family-default,
+    fontWeight: 400,
+    lineHeights: (
+      1.5,
+      1.5,
+    ),
+    textTransform: uppercase,
+    fontStyle: normal,
+    color: white
+  ),
+  menu-mobile: (
+    fontSizes: (
+      28px,
+      32px,
     ),
     fontFamily: $font-family-default,
     fontWeight: 400,

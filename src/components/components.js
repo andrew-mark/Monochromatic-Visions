@@ -1,30 +1,28 @@
-import Image from './Image'
 import Biography from './biography/biography'
-import Page from './page'
-import Grid from './grid'
+import Contact from './contact/contact'
+import Disc from './disc/disc'
+import Discography from './discography/discography'
 import Footer from './footer/footer'
 import Header from './header/header'
-import Teaser from './teaser'
-import Feature from './feature'
+import Headline from './headline/headline'
+import Image from './Image'
 import Main from './main/main'
-import NavItem from './nav_item'
-import Discography from './discography/discography'
-import Disc from './disc/disc'
+import Page from './page'
+import Shows from './shows/shows'
 import ComponentNotFound from './component_not_found'
 
 const ComponentList = {
   Biography,
+  Contact,
   Image,
   page: Page,
   Footer,
   Header,
-  grid: Grid,
-  teaser: Teaser,
-  feature: Feature,
-  nav_item: NavItem,
+  Headline,
   Main,
   Discography,
-  Disc
+  Disc,
+  shows: Shows
 }
 
 const Components = (type) => {

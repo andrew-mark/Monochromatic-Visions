@@ -35,8 +35,38 @@
     }
   }
 
+  &-menu {
+    @include respond-to-max('medium') {
+      background-color: $color-black;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateX(100%);
+      transition: all 0.3s ease-in;
+
+      &.is-active {
+        transform: translateX(0);
+        transition: all 0.3s ease-out;
+      }
+    }
+  }
+
   &-menuList {
+    justify-content: center;
+    align-items: center;
     display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+
+    @include respond-to('medium') {
+      display: flex;
+      flex-direction: row;
+    }
 
     &Item {
       @include typography('p');
@@ -46,7 +76,12 @@
     }
 
     &Link {
-      @include typography('link');
+      @include typography('menu-mobile');
+
+      @include respond-to('medium') {
+        @include typography('link');
+      }
+
       position: relative;
 
       &:after {
@@ -73,11 +108,81 @@
       }
     }
   }
+
+  &-burger {
+    color: $color-black;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+
+    @include respond-to('medium') {
+      display: none;
+    }
+
+    &.is-active {
+      color: $color-white;
+      z-index: 1;
+    }
+  }
+
+  &-iconLink {
+    color: $color-white;
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-socialMedia {
+    display: inline-flex;
+
+    @include respond-to('medium') {
+      display: none;
+    }
+  }
+
+  &-icons {
+    margin: 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+
+  &-instagram {
+    width: 24px;
+    height: 24px;
+  }
+
+  &-soundcloud {
+    fill: $color-white;
+    width: 35px;
+    height: 33px;
+  }
+
+  &-spotify {
+    fill: $color-white;
+    height: 24px;
+    width: 24px;
+  }
+
+  &-facebook {
+    fill: $color-white;
+    height: 24px;
+    width: 24px;
+  }
+
+  &-bandcamp {
+    fill: $color-white;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .hamburger {
   padding: 0;
-  display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
   transition-duration: 0.15s;
@@ -123,7 +228,7 @@
 .hamburger-inner::after {
   width: 27px;
   height: 2px;
-  background-color: $color-white;
+  background-color: $color-black;
   border-radius: 1px;
   position: absolute;
   transition-property: transform;

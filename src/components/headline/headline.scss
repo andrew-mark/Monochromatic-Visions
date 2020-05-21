@@ -1,0 +1,9 @@
+.headline {
+  @include paddingComponent();
+  
+  &-content {
+    @include grid-cell(12);
+    @include typography('h2');
+    text-align: center;
+  }
+}

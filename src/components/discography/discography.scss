@@ -1,7 +1,5 @@
 .discography {
   @include paddingComponent();
-  height: calc(100vh - 60px );
-  height: calc(var(--vh, 1vh) * 100 - 60px);
 
   h1 {
     @include grid-cell(12);
@@ -14,18 +12,25 @@
   &-discs {
     @include grid-cell(12);
 
-    @include respond-to('medium') {
+    @include respond-to('medium_large') {
       @include grid-pre(1);
       @include grid-cell(10);
     }
+
     display: flex;
   }
 
   &-disc {
-    @include grid-cell-size(12);
+    @include grid-cell(12);
 
-    @include respond-to('medium') {
-      @include grid-cell-size(4, 10);
+    @media only screen and (min-width: 620px) {
+      @include grid-cell(6);
+    }
+
+    @include respond-to('medium_large') {
+      @include grid-cell(3, 10);
+      max-width: 33.33%;
+      width: 33.33%;
     }
     margin-bottom: 32px;
   }

@@ -1,5 +1,4 @@
 import React from 'react'
-// import Components from './components.js';
 
 const PageNotFound = (props) => {
   return (
