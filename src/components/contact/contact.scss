@@ -24,6 +24,15 @@
     @include grid-cell(12);
     @include typography('p');
 
+    @include respond-to(tiny) {
+      @include grid-cell(6);
+    }
+
+
+    @include respond-to(small) {
+      @include grid-cell(7);
+    }
+
     @include respond-to(medium) {
       @include grid-pre(1);
       @include grid-cell(4);
