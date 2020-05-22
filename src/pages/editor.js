@@ -2,7 +2,6 @@ import React from 'react'
 import Components from '../components/components.js'
 import SbEditable from 'storyblok-react'
 import config from '../../gatsby-config'
-import Navi from '../components/navi.js'
 
 let sbConfigs = config.plugins.filter((item) => {
   return item.resolve === 'gatsby-source-storyblok'
@@ -52,19 +51,19 @@ class StoryblokEntry extends React.Component {
       resolve_relations: sbConfig.options.resolveRelations || []
     }, (data) => {
       this.setState({story: data.story})
-      this.loadGlovalNavi(data.story.lang)
+      // this.loadGlovalNavi(data.story.lang)
     })
   }
 
-  loadGlovalNavi(lang) {
-    const language = lang === 'default' ? '' : lang + '/'
-    window.storyblok.get({
-      slug: `${language}global-navi`,
-      version: 'draft'
-    }, (data) => {
-      this.setState({globalNavi: data.story})
-    })
-  }
+  // loadGlovalNavi(lang) {
+  //   const language = lang === 'default' ? '' : lang + '/'
+  //   window.storyblok.get({
+  //     slug: `${language}global-navi`,
+  //     version: 'draft'
+  //   }, (data) => {
+  //     this.setState({globalNavi: data.story})
+  //   })
+  // }
 
   initStoryblokEvents() {
     this.loadStory({storyId: getParam('path')})
@@ -95,12 +94,10 @@ class StoryblokEntry extends React.Component {
     }
 
     let content = this.state.story.content
-    let globalNavi = this.state.globalNavi.content
 
     return (
       <SbEditable content={content}>
       <div>
-        <Navi blok={globalNavi}></Navi>
         {React.createElement(Components(content.component), {key: content._uid, blok: content})}
       </div>
       </SbEditable>

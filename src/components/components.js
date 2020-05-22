@@ -22,7 +22,7 @@ const ComponentList = {
   Main,
   Discography,
   Disc,
-  shows: Shows
+  Shows
 }
 
 const Components = (type) => {

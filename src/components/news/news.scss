@@ -1,7 +1,9 @@
 .news {
   @include grid-cell(12);
 
+  border-bottom: 1px solid $color-grey;
   margin-bottom: 60px;
+  padding-bottom: 60px;
 
   &-headline {
     @include typography('h2');
@@ -57,7 +59,8 @@
 
   &-title {
     @include typography('h3-bold');
-    margin-bottom: 8px;
+    margin-bottom: 48px;
+    text-align: center;
   }
 
   &-text {

@@ -1,5 +1,5 @@
 .footer {
-  background-color: $color-white;
+  background-color: $color-black;
   
 
   &-content {
@@ -18,7 +18,7 @@
   }
 
   &-iconLink {
-    color: $color-black;
+    color: $color-white;
     margin-right: 16px;
 
     &:last-child {
@@ -32,18 +32,19 @@
   }
 
   &-soundcloud {
-    fill: $color-black;
+    fill: $color-white;
     width: 35px;
     height: 33px;
   }
 
   &-spotify {
+    fill: $color-white;
     height: 24px;
     width: 24px;
   }
 
   &-bandcamp {
-    fill: $color-black;
+    fill: $color-white;
     width: 40px;
     height: 40px;
   }

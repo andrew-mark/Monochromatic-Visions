@@ -5,8 +5,8 @@ import AlbumCover from '../../static/too-close-too-the-sea.jpeg'
 import Image from '@components/image/image'
 import { Link } from 'gatsby'
 
-const News = ({headline}) => {
-
+const News = (props) => {
+  console.log(props)
   const news = [
     {
       title: 'Debut album',
@@ -19,7 +19,7 @@ const News = ({headline}) => {
   ]
   return (
     <div className={`news`}>
-      <motion.h1 className="news-headline">News</motion.h1>
+      <motion.h2 className="news-headline">News</motion.h2>
       <div className="-container">
         <div className="news-items">
         <div className="-container">
@@ -37,7 +37,7 @@ const News = ({headline}) => {
           </div>
         </div>
       </div>
-      <Link className="news-button" href="/news">More news</Link>
+      <Link className="news-button" to="/news">More news</Link>
     </div>
   )
 }

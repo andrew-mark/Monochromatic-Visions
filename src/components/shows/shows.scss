@@ -1,11 +1,18 @@
 .shows {
-  @include grid-cell(12);
+  @include paddingComponent();
+  
   margin-bottom: 60px;
-  border-top: 1px solid $color-grey;
+  min-height: calc(100vh - 120px );
+  min-height: calc(var(--vh, 1vh) * 100 - 120px);
   flex: 1;
-  padding-top: 60px;
+
+  .main & {
+    border-top: 1px solid $color-grey;
+    padding-top: 60px;
+  }
 
   &-showsTitle {
+    @include grid-cell(12);
     @include typography('h2');
 
     margin-bottom: 48px;
@@ -29,6 +36,13 @@
       @include grid-pre(2);
       @include grid-cell(8);
     }
+  }
+
+  &-show {
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
   }
 
   &-button {

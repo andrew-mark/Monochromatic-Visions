@@ -14,4 +14,16 @@
     // height: calc(var(--vh, 1vh) * 100 - 60px);
     width: 100%;
   }
+
+  &-showsTitle {
+    @include typography('h3-bold');
+    @include grid-cell(12);
+
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  &-newsContainer {
+    margin-bottom: 60px;
+  }
 }

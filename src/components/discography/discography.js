@@ -14,7 +14,9 @@ const Footer = (props) => {
             <div className="-container">
               {props.blok.Title.map((disc, index) => (
                 <div key={index} className="discography-disc">
-                  <Disc props={disc} />
+                  <div className="discography-discInner">
+                    <Disc props={disc} />
+                  </div>
                 </div>
               ))}
             </div>

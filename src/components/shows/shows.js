@@ -1,20 +1,30 @@
 import React, {useState, useEffect, useContext} from 'react'
 import './shows.scss'
 import { motion } from "framer-motion"
-import { Link } from 'gatsby'
 
 const Shows = (props) => {
   console.log(props)
-  const shows = props.blok
   return (
     <div className={`shows`}>
-      <h2 className="shows-showsTitle">Upcoming shows</h2>
-      <div className="-container">
-        <div className="shows-events">
-          
-          <p className="shows-showsText">We will be back playing for you when it is safe to do.</p>
+      <div className="shows-wrapper -wrapper">
+        <div className="-container">
+          <h2 className="shows-showsTitle">Shows</h2>
+          <div className="shows-events">
+            {props.blok.shows && props.blok.shows.length >= 1 ?
+              props.blok.shows.map((show, index) => (
+                <div key={index} className="shows-show">
+                  <div className="shows-showLocation">
+                    {show.location}
+                  </div>
+                  <div className="shows-showDate">
+                    {show.date}
+                  </div>
+                </div>
+              ))
+              : <p className="shows-showsText">We will be back playing for you when it is safe to do.</p>
+            }
+          </div>
         </div>
-        <Link className="shows-button" href="/shows">See all shows</Link>
       </div>
     </div>
   )
