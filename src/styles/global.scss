@@ -80,6 +80,7 @@ h6 {
 .notFound {
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -89,7 +90,7 @@ h6 {
     color: $color-black;
     letter-spacing: 5px;
 
-    &Link {
+    a {
       color: $color-black;
     }
   }
