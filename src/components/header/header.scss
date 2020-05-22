@@ -124,6 +124,10 @@
       color: $color-white;
       z-index: 1;
     }
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &-iconLink {
