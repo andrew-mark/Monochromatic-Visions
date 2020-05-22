@@ -1,11 +1,12 @@
 import React from 'react'
-import Header from '@components/header/header'
+import {Link} from 'gatsby'
 
 const PageNotFound = (props) => {
   return (
-    <React.Fragment>
-      <Header />
-    </React.Fragment>
+    <div className="notFound">
+      <h1><Link to="/">Monochromatic visions</Link></h1>
+      <h2>Seems to be no page here</h2>
+    </div>
   )
 }
 

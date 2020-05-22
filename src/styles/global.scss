@@ -76,3 +76,26 @@ h6 {
 .-container {
   @include grid-container();
 }
+
+.notFound {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+
+  h1 {
+    @include typography('title');
+    color: $color-black;
+    letter-spacing: 5px;
+
+    &Link {
+      color: $color-black;
+    }
+  }
+
+  h2 {
+    @include typography('p');
+    color: $color-black;
+  }
+}
