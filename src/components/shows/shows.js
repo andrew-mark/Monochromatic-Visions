@@ -3,7 +3,6 @@ import './shows.scss'
 import { motion } from "framer-motion"
 
 const Shows = (props) => {
-  console.log(props)
   return (
     <div className={`shows`}>
       <div className="shows-wrapper -wrapper">

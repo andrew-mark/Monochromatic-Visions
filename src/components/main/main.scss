@@ -9,13 +9,16 @@
   }
 
   &-content {
-    @include paddingComponent();
+    padding-top: 60px;
+    padding-bottom: 120px;
+    // @include paddingComponent();
     // height: calc(100vh - 60px );
     // height: calc(var(--vh, 1vh) * 100 - 60px);
     width: 100%;
   }
 
-  &-showsTitle {
+  &-showsTitle,
+  &-newsTitle {
     @include typography('h3-bold');
     @include grid-cell(12);
 

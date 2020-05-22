@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import { motion } from "framer-motion"
 
 const Headline = (props) => {
-  console.log(props)
   return (
     <div className={`headline`}>
       <div className="-wrapper">

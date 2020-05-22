@@ -32,10 +32,11 @@
   &-item {
     @include grid-cell(12);
     margin-bottom: 32px;
+    text-align: left;
 
     @include respond-to('tiny_small') {
       @include grid-cell(6);
-      margin-bottom: 0;
+      margin-bottom: 32px;
     }
 
     @include respond-to('medium_small') {
@@ -45,7 +46,7 @@
     &Inner {
       border-radius: 4px;
       box-shadow: 0 0 10px 3px rgba(0,0,0,0.05);
-      height: 360px;
+      height: 320px;
       padding: 16px;
     }
 
@@ -59,8 +60,8 @@
 
   &-title {
     @include typography('h3-bold');
-    margin-bottom: 48px;
-    text-align: center;
+    margin-bottom: 8px;
+    text-align: left;
   }
 
   &-text {

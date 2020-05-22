@@ -11,12 +11,22 @@
 
   &-subline {
     @include grid-cell(12);
-    @include typography('h2');
+    @include typography('h3-bold');
     margin-bottom: 48px;
+
+    @include respond-to(medium) {
+      @include grid-pre(1);
+      @include grid-cell(11);
+    }
   }
 
   &-text {
     @include grid-cell(12);
     @include typography('p');
+
+    @include respond-to(medium) {
+      @include grid-pre(1);
+      @include grid-cell(4);
+    }
   }
 }

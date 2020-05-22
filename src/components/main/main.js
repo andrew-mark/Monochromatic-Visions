@@ -6,9 +6,9 @@ import { Link } from 'gatsby'
 import Image from '@components/image/image'
 
 const Main = (props) => {
-  console.log(props.blok.News[1].reference.content.global)
-  const shows = props.blok.News[1].reference.content.global[0].shows.reverse()
-  const news = props.blok.News[0].reference.content.global[0]['news_item'].reverse()
+  const shows = props.blok.News[1].reference.content.global[0].shows.reverse().slice(0,4)
+  const news = props.blok.News[0].reference.content.global[0]['news_item'].reverse().slice(0,4)
+
   return (
     <React.Fragment>
       <div className="main-video">
@@ -20,7 +20,7 @@ const Main = (props) => {
             <div className="main-content">
               <div className="-container main-newsContainer">
                 <div className="news-items">
-                <h2 className="news-title">News</h2>
+                <h2 className="main-newsTitle">News</h2>
                 <div className="-container">
                   {news.map((item, index) => (
                     <div key={index} className="news-item">

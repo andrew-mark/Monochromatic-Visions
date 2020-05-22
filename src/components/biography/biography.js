@@ -7,7 +7,6 @@ import Video from '@components/video/video'
 
 const Biography = (props) => {
   const content = props.blok.Text.content
-  console.log(content)
   return (
     <React.Fragment>
       <div className="biography-video">
