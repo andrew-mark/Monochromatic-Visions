@@ -7,6 +7,7 @@ import Video from '@components/video/video'
 
 const Biography = (props) => {
   const content = props.blok.Text.content
+  console.log(content)
   return (
     <React.Fragment>
       <div className="biography-video">
@@ -17,11 +18,10 @@ const Biography = (props) => {
           <div className="biography-container -container">
             <div className="biography-content">
             {content.map(item => {
-              return (
-                item.content.map(p => (
-                <p>{p.text}</p>
+              return item.content &&
+                item.content.map((p, index) => (
+                <p key={index}>{p.text}</p>
               ))
-              )
             })}
             </div>
           </div>
