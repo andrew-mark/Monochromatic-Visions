@@ -13,7 +13,6 @@ export const useDimensions = ref => {
     dimensions.current.height = ref.current.offsetHeight;
     dimensions.current.left = box.left;
     dimensions.current.right = box.right;
-    console.log(dimensions.current)
   }, []);
 
   return dimensions.current;

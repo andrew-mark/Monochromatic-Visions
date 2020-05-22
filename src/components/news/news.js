@@ -6,17 +6,6 @@ import Image from '@components/image/image'
 import { Link } from 'gatsby'
 
 const News = (props) => {
-  console.log(props)
-  const news = [
-    {
-      title: 'Debut album',
-      text: `On may 29th we released our debut album titled 'Too Close Too The Sea'`
-    },
-    {
-      title: 'Debut album',
-      text: `On may 29th we released our debut album titled 'Too Close Too The Sea'`
-    }
-  ]
   return (
     <div className={`news`}>
       <motion.h2 className="news-headline">News</motion.h2>
