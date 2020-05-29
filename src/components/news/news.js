@@ -12,7 +12,7 @@ const News = (props) => {
       <div className="-container">
         <div className="news-items">
         <div className="-container">
-          {news.map((item, index) => (
+          {/*{news.map((item, index) => (
             <div key={index} className="news-item">
               <div className="news-itemInner">
                 <div className="news-itemImage">
@@ -22,7 +22,7 @@ const News = (props) => {
                 <p className="news-text">{item.text}</p>
               </div>
             </div>
-          ))}
+          ))}*/}
           </div>
         </div>
       </div>

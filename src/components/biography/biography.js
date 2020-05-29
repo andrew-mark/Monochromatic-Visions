@@ -7,10 +7,11 @@ import Video from '@components/video/video'
 
 const Biography = (props) => {
   const content = props.blok.Text.content
+  console.log(props)
   return (
     <React.Fragment>
       <div className="biography-video">
-        <Image src={Bio} classes={'biography-image'} />
+        <Image src={props.blok.Image} classes={'biography-image'} />
       </div>
       <div className="biography">
         <div className="biography-wrapper -wrapper">
