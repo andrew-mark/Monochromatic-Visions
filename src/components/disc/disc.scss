@@ -1,4 +1,55 @@
 .disc {
+  box-shadow: 0 0 3px 2px rgba(0,0,0,0.1);
   display: flex;
   justify-content: center;
+  margin-bottom: 8px;
+
+  h3 {
+    @include typography('h3-bold');
+  }
+
+  &-title {
+    align-items: flex-end;
+    display: flex;
+
+    p {
+      @include typography('link');
+      margin-right: 8px;
+    }
+  }
+
+  &-releaseDate {
+    align-items: flex-end;
+    display: flex;
+  }
+
+  &-date {
+    @include typography('link');
+    margin-right: 8px;
+  }
+
+  &-link {
+    @include typography('link');
+    display: inline-block;
+    padding-bottom: 2px;
+    position: relative;
+
+    &:after {
+      background-color: $color-black;
+      content: '';
+      display: block;
+      height: 2px;
+      transform-origin: center;
+      transform: scaleX(1);
+      transition: transform 0.2s;
+      width: 100%;
+    }
+
+    &:hover {
+      &:after {
+        transform: scaleX(0);
+      }
+    }
+
+  }
 }

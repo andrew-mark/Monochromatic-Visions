@@ -4,7 +4,8 @@ import './discography.scss'
 import { motion } from "framer-motion"
 import Disc from '../disc/disc'
 
-const Footer = (props) => {
+const Discography = (props) => {
+  const discs = props.blok.Title.reverse()
   return (
     <div className={`discography`}>
       <div className="discography-wrapper -wrapper">
@@ -12,7 +13,7 @@ const Footer = (props) => {
           <h1>Discography</h1>
           <div className="discography-discs">
             <div className="-container">
-              {props.blok.Title.map((disc, index) => (
+              {discs.map((disc, index) => (
                 <div key={index} className="discography-disc">
                   <div className="discography-discInner">
                     <Disc props={disc} />
@@ -27,4 +28,4 @@ const Footer = (props) => {
   )
 }
 
-export default Footer
+export default Discography

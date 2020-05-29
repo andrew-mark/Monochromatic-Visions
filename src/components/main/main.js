@@ -30,6 +30,7 @@ const Main = (props) => {
                         </div>
                         <h3 className="news-title">{item.Title}</h3>
                         <p className="news-text">{item.Text}</p>
+                        <a className="news-link" href={item.Link}>{item.link_text}</a>
                       </div>
                     </div>
                   ))}
