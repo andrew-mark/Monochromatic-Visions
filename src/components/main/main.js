@@ -13,6 +13,11 @@ const Main = (props) => {
     <React.Fragment>
       <div className="main-video">
         <Video />
+        <div className="main-videoOverlay">
+          <h3 className="main-newAlbum">New Album</h3>
+          <h2 className="main-albumTitle">Too Close To The Sea</h2>
+          <a target="_blank" className="main-albumLink" href="https://monochromaticvisions.bandcamp.com/album/too-close-to-the-sea">Listen here</a>
+        </div>
       </div>
       <div className="main">
         <div className="main-wrapper -wrapper">

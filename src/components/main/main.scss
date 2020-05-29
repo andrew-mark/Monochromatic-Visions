@@ -6,6 +6,46 @@
   &-video {
     height: calc(100vh - 120px );
     height: calc(var(--vh, 1vh) * 100 - 120px);
+    position: relative;
+
+    &Overlay {
+      align-items: center;
+      color: $color-white;
+      display: flex;
+      flex-direction: column;
+      top: calc(50% + 32px);
+      left: 50%;
+      text-transform: uppercase;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  &-newAlbum {
+    @include typography('h3-serif');
+    color: $color-white;
+    margin-bottom: 8px;
+  }
+
+  &-albumTitle {
+    @include typography('h2-serif');
+    color: $color-white;
+    margin-bottom: 24px;
+  }
+
+  &-albumLink {
+    @include typography('link-bold');
+    border: 2px solid $color-white;
+    color: $color-white;
+    padding: 8px 16px;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background-color: $color-white;
+      border: 2px solid $color-white;
+      color: $color-black;
+    }
   }
 
   &-content {

@@ -12,7 +12,7 @@ $font-specifications: (
   title: (
     fontSizes: (
       22px,
-      20px,
+      18px,
     ),
     fontFamily: $font-family-default,
     fontWeight: 200,
@@ -54,12 +54,43 @@ $font-specifications: (
     color: black,
     letterSpacing: 1px
   ),
+  h2-serif: (
+    fontSizes: (
+      26px,
+      22px,
+    ),
+    fontFamily: $font-family-default,
+    fontWeight: 400,
+    lineHeights: (
+      1.1,
+      1.1,
+    ),
+    textTransform: uppercase,
+    fontStyle: normal,
+    color: black,
+    letterSpacing: 1px
+  ),
   h3: (
     fontSizes: (
       22px,
       20px,
     ),
     fontFamily: $font-family-display,
+    fontWeight: 200,
+    lineHeights: (
+      1.1,
+      1.1,
+    ),
+    fontStyle: normal,
+    color: black,
+    letterSpacing: 1px
+  ),
+  h3-serif: (
+    fontSizes: (
+      20px,
+      18px,
+    ),
+    fontFamily: $font-family-default,
     fontWeight: 200,
     lineHeights: (
       1.1,
@@ -119,6 +150,20 @@ $font-specifications: (
     ),
     fontFamily: $font-family-default,
     fontWeight: 200,
+    lineHeights: (
+      1.5,
+      1.5,
+    ),
+    fontStyle: normal,
+    color: $color-black
+  ),
+  link-bold: (
+    fontSizes: (
+      16px,
+      14px,
+    ),
+    fontFamily: $font-family-default,
+    fontWeight: 400,
     lineHeights: (
       1.5,
       1.5,
