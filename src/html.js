@@ -21,6 +21,7 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          <title>Monochromatic Visions</title>
           {this.props.headComponents}
           <link rel="stylesheet" href="https://use.typekit.net/ynv0aud.css"></link>
           <meta name="theme-color" content="#ffffff"></meta>
