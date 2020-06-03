@@ -25,6 +25,7 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
           <link rel="stylesheet" href="https://use.typekit.net/ynv0aud.css"></link>
           <meta name="theme-color" content="#ffffff"></meta>
+          <meta name="description" content="Monochromatic Visions band official website."></meta>
         </head>
         <body>
           <div
